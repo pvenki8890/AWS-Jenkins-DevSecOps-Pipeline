@@ -1,0 +1,17 @@
+add the screenshots of 
+
+Jenkins dashboard
+Successful pipeline
+SonarQube report
+Trivy scan results
+Docker images
+EC2 instance
+Jenkins stages
+
+after completing the pipeline build
+
+screenshots/
+├── jenkins-success.png
+├── sonar-dashboard.png
+├── trivy-scan.png
+├── docker-build.png
