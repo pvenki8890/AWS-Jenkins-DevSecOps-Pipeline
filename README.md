@@ -1,56 +1,54 @@
-# AWS Jenkins DevSecOps CI/CD Pipeline
+# 🚀 AWS Jenkins DevSecOps CI/CD Pipeline
 
-A complete end-to-end DevSecOps CI/CD pipeline built using Jenkins, Docker, SonarQube, Maven, Trivy, and AWS EC2 to automate application build, code quality analysis, vulnerability scanning, containerization, and deployment workflows.
-
----
-
-## 🚀 Project Overview
-
-This repository showcases a hands-on implementation of a production-style CI/CD pipeline designed with DevSecOps best practices. The pipeline automates the software delivery lifecycle while ensuring code quality, security validation, and deployment readiness.
-
-The infrastructure and tooling were provisioned on an AWS EC2 instance and integrated together using Jenkins Pipeline as Code.
-
-### ✨ Key Features
-
-* Automated CI/CD Pipeline using Jenkins
-* Static Code Analysis with SonarQube
-* Docker Image Build & Containerization
-* Vulnerability Scanning using Trivy
-* Maven Build Automation
-* Jenkins Shared Library Integration
-* DockerHub Credential Management
-* SonarQube Quality Gate Validation
-* Webhook-based Tool Integration
-* End-to-End DevSecOps Workflow
+A production-style end-to-end DevSecOps CI/CD pipeline built using Jenkins, Maven, SonarQube, Docker, Trivy, and AWS EC2. This project automates the software delivery lifecycle including build, testing, code quality analysis, containerization, vulnerability scanning, and Docker image publishing.
 
 ---
 
-## 🛠️ Tech Stack & Tools
+# 📌 Project Overview
 
-### Cloud & Infrastructure
+This project demonstrates a complete hands-on implementation of a modern DevSecOps CI/CD workflow using Jenkins Pipeline as Code.
 
-* Amazon Web Services (AWS EC2)
-* Ubuntu Linux
+The pipeline was built and configured on an AWS EC2 Ubuntu server and integrates multiple DevOps tools to automate continuous integration and delivery processes for a Java Spring Boot application.
 
-### DevOps & CI/CD
+The objective of this project was to gain real-world hands-on experience with:
 
-* Jenkins
-* Jenkins Shared Libraries
-* Git & GitHub
-
-### Build & Quality Tools
-
-* Maven
-* SonarQube
-
-### Security & Containerization
-
-* Docker
-* Trivy
+- CI/CD Pipeline Automation
+- DevSecOps Tool Integration
+- Docker Containerization
+- Jenkins Shared Libraries
+- Maven Build Lifecycle
+- AWS Infrastructure Setup
+- Troubleshooting & Pipeline Debugging
 
 ---
 
-## 📐 CI/CD Workflow Architecture
+# 🛠️ Tech Stack
+
+## ☁️ Cloud & Infrastructure
+
+- Amazon EC2
+- Ubuntu Linux
+
+## ⚙️ CI/CD & DevOps
+
+- Jenkins
+- Jenkins Shared Libraries
+- Git
+- GitHub
+
+## 🧪 Build & Quality Tools
+
+- Maven
+- SonarQube
+
+## 🔐 Security & Containerization
+
+- Docker
+- Trivy
+
+---
+
+# 📐 CI/CD Workflow Architecture
 
 ```text
 Developer Commit
@@ -59,155 +57,185 @@ GitHub Repository
         ↓
 Jenkins Pipeline Trigger
         ↓
-Source Code Checkout
+Git Checkout
+        ↓
+Maven Unit Testing
+        ↓
+Integration Testing
+        ↓
+SonarQube Static Code Analysis
         ↓
 Maven Build & Packaging
         ↓
-SonarQube Static Analysis
-        ↓
-Quality Gate Validation
-        ↓
 Docker Image Build
         ↓
-Trivy Vulnerability Scan
+Trivy Security Scan
         ↓
 DockerHub Push
         ↓
-Pipeline Cleanup & Reporting
-```
+Cleanup & Reporting
 
----
+🔄 Pipeline Stages
+1️⃣ Git Checkout
 
-## 🔄 Pipeline Stages
+Jenkins pulls the latest source code from the GitHub repository.
 
-### 1️⃣ Source Code Checkout
+2️⃣ Unit Testing
 
-Jenkins pulls the latest application code from GitHub SCM.
+Maven executes automated unit tests to validate application functionality.
 
-### 2️⃣ Build & Package
+Tools Used
+Maven
+JUnit
+3️⃣ Integration Testing
 
-Maven compiles and packages the Java application.
+Integration tests are executed as part of the CI workflow.
 
-### 3️⃣ Static Code Analysis
+4️⃣ Static Code Analysis - SonarQube
 
-SonarQube scans the source code for:
+SonarQube performs code quality and security analysis.
 
-* Bugs
-* Vulnerabilities
-* Code Smells
-* Security Issues
-* Maintainability Metrics
+Validations Performed
+Bugs Detection
+Vulnerabilities
+Code Smells
+Maintainability Analysis
+Security Hotspots
+5️⃣ Maven Build & Packaging
 
-### 4️⃣ Quality Gate Validation
+Application is packaged into an executable JAR file using Maven.
 
-Pipeline waits for SonarQube Quality Gate approval before proceeding.
+6️⃣ Docker Image Build
 
-### 5️⃣ Docker Image Build
+The Spring Boot application is containerized using Docker.
 
-Application is containerized using Docker.
-
-### 6️⃣ Vulnerability Scanning
+Docker Features
+Lightweight container image
+Portable deployment
+Consistent runtime environment
+7️⃣ Trivy Vulnerability Scanning
 
 Trivy scans the Docker image for:
 
-* Critical Vulnerabilities
-* High Severity CVEs
-* Misconfigurations
+Critical Vulnerabilities
+High Severity CVEs
+Misconfigurations
+8️⃣ DockerHub Push
 
-### 7️⃣ DockerHub Push
+Successfully validated Docker images are pushed securely to DockerHub.
 
-Validated Docker image is pushed securely to DockerHub.
+9️⃣ Docker Cleanup
 
----
+Local Docker images and temporary resources are cleaned up after execution.
 
-## 🔧 Jenkins Integrations
+🔧 Jenkins Integrations
+✅ SonarQube Integration
+SonarQube Server Configuration
+Authentication using Access Tokens
+Jenkins-SonarQube Integration
+Quality Gate Validation
+✅ DockerHub Integration
+Secure DockerHub Credentials
+Automated Docker Login
+Image Push Automation
+✅ Shared Library Integration
 
-### SonarQube Integration
+Reusable Jenkins pipeline functions implemented using Jenkins Shared Libraries for modular and maintainable pipeline code.
 
-* SonarQube Server Configuration
-* Sonar Token Authentication
-* Webhook Integration
-* Quality Gate Enforcement
+📊 Project Validation
 
-### DockerHub Integration
+The following validations were successfully completed:
 
-* Secure Credentials Management
-* Automated Docker Authentication
+✅ Maven Build Success
+✅ Unit Test Execution
+✅ Integration Test Execution
+✅ Docker Image Build
+✅ DockerHub Push
+✅ Jenkins Pipeline Automation
+✅ Shared Library Integration
+✅ SonarQube Integration
+✅ End-to-End CI/CD Workflow
+📷 Screenshots
+Jenkins Successful Pipeline
+<img width="1900" height="902" alt="Jenkins stage view" src="https://github.com/user-attachments/assets/ff1c6593-2ee7-4791-b6d2-5bb4a797f600" />
 
-### Shared Library Integration
+Console Output final Success
+<img width="793" height="1027" alt="Console Output final Success" src="https://github.com/user-attachments/assets/b7789f97-b008-4cfd-b39a-227b1e96d83d" />
 
-Reusable Jenkins pipeline code implemented using Jenkins Shared Libraries.
+DockerHub pushed image
+<img width="1900" height="903" alt="DockerHub pushed image" src="https://github.com/user-attachments/assets/4aa21edc-8579-48f5-9162-088dc9114b12" />
 
----
+EC2 Setup
+<img width="1907" height="823" alt="EC2 setup1" src="https://github.com/user-attachments/assets/d9bd3f68-bfed-4cc1-9d51-b868854ca018" />
 
-## 📊 Validation & Results
+Jenkins stage view
+<img width="1900" height="902" alt="Jenkins stage view" src="https://github.com/user-attachments/assets/9c6e28a2-4082-495d-a14c-5a1a9bba5398" />
 
-After successful pipeline execution, the following validations were performed:
+GitHub repo
+<img width="940" height="896" alt="GitHub repo2" src="https://github.com/user-attachments/assets/93bf9fe6-99ab-4757-b27d-d61b02fa15e8" />
 
-* ✅ Jenkins Console Output Verification
-* ✅ SonarQube Dashboard Quality Reports
-* ✅ Trivy Vulnerability Reports
-* ✅ Docker Image Build Verification
-* ✅ DockerHub Push Validation
+⚠️ Infrastructure Notes
 
----
+Due to EC2 infrastructure resource limitations during testing:
 
-## 📷 Screenshots
+SonarQube Quality Gate stage was temporarily skipped
+Trivy scan stage was temporarily disabled during final execution
 
-### Jenkins Pipeline Execution
+These stages were successfully configured and tested independently during implementation.
 
-*Add your Jenkins pipeline screenshot here*
+🎯 Key Learning Outcomes
 
-### SonarQube Dashboard
+Through this project, I gained practical hands-on experience in:
 
-*Add your SonarQube quality gate screenshot here*
+CI/CD Pipeline Design
+Jenkins Pipeline as Code
+DevSecOps Best Practices
+Docker Containerization
+SonarQube Integration
+Vulnerability Scanning
+AWS EC2 Administration
+Linux Troubleshooting
+Jenkins Shared Libraries
+Credential & Secret Management
+Docker Permissions Management
+Real-world Pipeline Debugging
+🚀 Future Enhancements
+Kubernetes Deployment Integration
+Helm Chart Deployment
+Terraform Infrastructure Automation
+GitHub Webhook Automation
+Multi-Environment Deployment Pipelines
+Slack/Email Notifications
+Artifact Management using JFrog
+Production-grade Monitoring & Logging
+🤝 Contributing
 
-### Trivy Scan Results
+Contributions, suggestions, and improvements are welcome.
 
-*Add your Trivy vulnerability scan screenshot here*
+Steps to Contribute
+Fork the repository
+Create a feature branch
+Commit your changes
+Push to your branch
+Open a Pull Request
+📄 Conclusion
 
----
+This project provided practical real-world exposure to designing and troubleshooting a complete DevSecOps CI/CD pipeline using industry-standard tools and AWS infrastructure.
 
-## 🎯 Learning Outcomes
+It demonstrates hands-on implementation of:
 
-Through this project, I gained practical experience in:
+Continuous Integration
+Continuous Delivery
+Security Scanning
+Containerization
+Infrastructure Automation
+Jenkins Pipeline Orchestration
 
-* CI/CD Pipeline Automation
-* DevSecOps Best Practices
-* Jenkins Pipeline as Code
-* Docker Containerization
-* Static Code Analysis
-* Security Scanning Automation
-* AWS Infrastructure Setup
-* Credential & Secret Management
-* Tool Integration & Automation
 
----
 
-## 📌 Future Improvements
 
-* Kubernetes Deployment Integration
-* Terraform Infrastructure Automation
-* Helm Chart Deployment
-* Multi-Environment Pipelines
-* Automated Deployment Strategies
-* Slack/Email Notifications
-* Artifact Management using JFrog
 
----
 
-## 🤝 Contributing
 
-Contributions and suggestions are welcome.
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to your branch
-5. Create a Pull Request
 
----
-
-## 📄 Reference
-
-This project was implemented as part of a hands-on DevOps and CI/CD exercise using Jenkins, SonarQube, Docker, Maven, Trivy, and AWS services.
