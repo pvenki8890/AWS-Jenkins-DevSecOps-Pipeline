@@ -279,48 +279,101 @@ The following validations were successfully completed during project implementat
 
 ---
 
-# 📷 Screenshots
+# 📷 Project Screenshots
+
+The following screenshots demonstrate the complete implementation of the AWS Jenkins DevSecOps CI/CD Pipeline, including infrastructure setup, pipeline automation, Docker image delivery, and successful execution results.
+
+AWS-Jenkins-DevSecOps-Pipeline
+│
+├── README.md
+└── screenshots
+    ├── 01_github-repository-overview.jpg
+    ├── 02_jenkinsfile-pipeline-code.jpg
+    ├── 03_aws-ec2-environment.jpg
+    ├── 04_jenkins-stage-view.jpg
+    ├── 05_successful-pipeline-run.jpg
+    ├── 06_console-output-success.jpg
+    └── 07_dockerhub-image-published.jpg
 
 ---
 
-## 🖥️ Jenkins Successful Pipeline
+## 📁 Source Code Repository
 
-> Add Jenkins Stage View Screenshot
+![Source Code Repository](screenshots/01_github-repository-overview.jpg)
 
----
-
-## 📄 Jenkins Console Output
-
-> Add Final Successful Build Console Screenshot
+**Description:**  
+GitHub repository containing the complete project source code, Jenkins Pipeline as Code (Jenkinsfile), Dockerfile, Maven configuration, Kubernetes manifests, and project documentation.
 
 ---
 
-## 🐳 DockerHub Repository
+## ⚙️ Jenkins Pipeline as Code
 
-> Add DockerHub Pushed Image Screenshot
+![Jenkins Pipeline as Code](screenshots/02_jenkinsfile-pipeline-code.jpg)
 
----
-
-## ☁️ AWS EC2 Setup
-
-> Add AWS EC2 Infrastructure Screenshot
+**Description:**  
+Declarative Jenkins Pipeline implemented using Jenkins Shared Libraries to automate source code checkout, testing, build, containerization, Docker image publishing, and cleanup operations.
 
 ---
 
-## 📁 GitHub Repository
+## ☁️ AWS EC2 Build Environment
 
-> Add GitHub Repository Screenshot
+![AWS EC2 Environment](screenshots/03_aws-ec2-environment.jpg)
+
+**Description:**  
+AWS EC2 Ubuntu server used to host Jenkins, Docker, Maven, Git, SonarQube, and supporting DevOps tooling required for the CI/CD pipeline implementation.
 
 ---
 
-# ⚠️ Infrastructure Notes
+## 🚀 Jenkins Pipeline Stage View
 
-Due to temporary EC2 infrastructure limitations during testing:
+![Jenkins Stage View](screenshots/04_jenkins-stage-view.jpg)
 
-- SonarQube Quality Gate stage was temporarily skipped
-- Trivy scan stage was temporarily disabled during final execution
+**Description:**  
+Visual representation of the complete CI/CD workflow showing successful execution of all configured stages including Git Checkout, Unit Testing, Integration Testing, Maven Build, Docker Image Build, DockerHub Push, and Cleanup.
 
-Both stages were successfully configured and tested independently during implementation.
+---
+
+## ✅ Successful Pipeline Execution
+
+![Successful Pipeline Execution](screenshots/05_successful-pipeline-run.jpg)
+
+**Description:**  
+Jenkins pipeline completed successfully with all stages passing, demonstrating end-to-end automation of the software delivery workflow.
+
+---
+
+## 📄 Build Logs & Execution Validation
+
+![Build Logs](screenshots/06_console-output-success.jpg)
+
+**Description:**  
+Jenkins console output validating successful execution of the pipeline, including application build, Docker image creation, image push, and cleanup activities.
+
+---
+
+## 🐳 DockerHub Image Published
+
+![DockerHub Image](screenshots/07_dockerhub-image-published.jpg)
+
+**Description:**  
+Successfully built and published Docker image available in DockerHub repository, ready for deployment and consumption across environments.
+
+---
+
+## 🏆 Project Outcome
+
+This project successfully demonstrates:
+
+- ✅ CI/CD Pipeline Automation using Jenkins
+- ✅ Jenkins Shared Library Implementation
+- ✅ Maven Build & Test Automation
+- ✅ Docker Image Creation & Management
+- ✅ DockerHub Integration & Image Publishing
+- ✅ AWS EC2 Infrastructure Setup
+- ✅ DevSecOps Workflow Implementation
+- ✅ Infrastructure Troubleshooting & Debugging
+- ✅ End-to-End Pipeline Orchestration
+- ✅ Production-Style DevOps Practices
 
 ---
 
