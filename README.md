@@ -283,10 +283,11 @@ The following validations were successfully completed during project implementat
 
 The following screenshots demonstrate the complete implementation of the AWS Jenkins DevSecOps CI/CD Pipeline, including infrastructure setup, pipeline automation, Docker image delivery, and successful execution results.
 
-AWS-Jenkins-DevSecOps-Pipeline
+AWS-Jenkins-DevSecOps-Pipeline/
 │
 ├── README.md
-└── screenshots
+│
+└── screenshots/
     ├── 01_github-repository-overview.jpg
     ├── 02_jenkinsfile-pipeline-code.jpg
     ├── 03_aws-ec2-environment.jpg
