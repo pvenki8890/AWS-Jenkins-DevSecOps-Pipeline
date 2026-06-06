@@ -98,15 +98,12 @@ Jenkins Pipeline
 AWS-Jenkins-DevSecOps-Pipeline
 │
 ├── README.md
-├── Project Overview.md
 │
 └── screenshots/
     ├── 01_github-repository-overview.jpg
     ├── 02_jenkinsfile-pipeline-code.jpg
     ├── 03_aws-ec2-environment.jpg
-    ├── 04_jenkins-stage-view.jpg
     ├── 05_successful-pipeline-run.jpg
-    ├── 06_console-output-success.jpg
     └── 07_dockerhub-image-published.jpg
 ```
 
