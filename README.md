@@ -73,11 +73,11 @@ Jenkins Pipeline
 
 ### Successful Pipeline Execution
 
-![Pipeline Success](screenshots/05_successful-pipeline-run.jpg)
+![Pipeline Success](screenshots/04_successful-pipeline-run.jpg)
 
 ### DockerHub Published Image
 
-![DockerHub](screenshots/07_dockerhub-image-published.jpg)
+![DockerHub](screenshots/05_dockerhub-image-published.jpg)
 
 ---
 
