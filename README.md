@@ -1,446 +1,147 @@
-# 🚀 AWS Jenkins DevSecOps CI/CD Pipeline
+# 🚀 AWS Jenkins CI/CD Pipeline
 
-A production-style end-to-end DevSecOps CI/CD pipeline built using Jenkins, Maven, SonarQube, Docker, Trivy, and AWS EC2. This project automates the software delivery lifecycle including build, testing, code quality analysis, containerization, vulnerability scanning, and Docker image publishing.
-
----
-
-# 📌 Project Overview
-
-This project demonstrates a complete hands-on implementation of a modern DevSecOps CI/CD workflow using Jenkins Pipeline as Code.
-
-The pipeline was built and configured on an AWS EC2 Ubuntu server and integrates multiple DevOps tools to automate continuous integration and delivery processes for a Java Spring Boot application.
-
-The objective of this project was to gain real-world hands-on experience with:
-
-- CI/CD Pipeline Automation
-- DevSecOps Tool Integration
-- Docker Containerization
-- Jenkins Shared Libraries
-- Maven Build Lifecycle
-- AWS Infrastructure Setup
-- Troubleshooting & Pipeline Debugging
+Production-style CI/CD pipeline built using AWS EC2, Jenkins, Maven, Docker, DockerHub, GitHub, and Jenkins Shared Libraries.
 
 ---
 
-# 🛠️ Tech Stack
+## 📌 Overview
 
-## ☁️ Cloud & Infrastructure
+This project demonstrates an automated CI/CD workflow for a Java Spring Boot application.
 
-- Amazon EC2
-- Ubuntu Linux
+### Implemented Stages
 
-## ⚙️ CI/CD & DevOps
-
-- Jenkins
-- Jenkins Shared Libraries
-- Git
-- GitHub
-
-## 🧪 Build & Quality Tools
-
-- Maven
-- SonarQube
-
-## 🔐 Security & Containerization
-
-- Docker
-- Trivy
+- Git Checkout
+- Maven Unit Testing
+- Integration Testing
+- Maven Build & Packaging
+- Docker Image Build
+- DockerHub Push
+- Cleanup & Reporting
 
 ---
 
-### 🔗 Repository Link
-👉 https://github.com/pvenki8890/Java_app_3.0
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|-----------|-------------|
+| Cloud | AWS EC2 |
+| CI/CD | Jenkins, Jenkins Shared Libraries |
+| Build | Maven, JUnit |
+| Containerization | Docker, DockerHub |
+| Source Control | Git, GitHub |
+| Operating System | Ubuntu Linux |
 
 ---
 
-# 📐 CI/CD Workflow Architecture
+## 📐 Architecture
 
 ```text
-┌──────────────────────┐
-│  Developer Commit    │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│  GitHub Repository   │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Jenkins Pipeline     │
-│ Triggered            │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│  Git Checkout        │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│  Maven Unit Testing  │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Integration Testing  │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ SonarQube Static     │
-│ Code Analysis        │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Maven Build &        │
-│ Packaging            │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Docker Image Build   │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Trivy Security Scan  │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ DockerHub Push       │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Cleanup & Reporting  │
-└──────────────────────┘
+Developer
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+Jenkins Pipeline
+    │
+    ├── Git Checkout
+    ├── Unit Testing
+    ├── Integration Testing
+    ├── Maven Build
+    ├── Docker Build
+    ├── DockerHub Push
+    └── Cleanup
 ```
 
 ---
 
-# 🔄 Pipeline Stages
+## 📷 Screenshots
+
+### GitHub Repository Overview
+![GitHub Repository](screenshots/01_github-repository-overview.jpg)
+
+### Jenkins Pipeline Code
+![Jenkinsfile](screenshots/02_jenkinsfile-pipeline-code.jpg)
+
+### AWS EC2 Environment
+![AWS](screenshots/03_aws-ec2-environment.jpg)
+
+### Successful Pipeline Execution
+![Pipeline Success](screenshots/05_successful-pipeline-run.jpg)
+
+### DockerHub Published Image
+![DockerHub](screenshots/07_dockerhub-image-published.jpg)
 
 ---
 
-## 1️⃣ Git Checkout
+## 📊 Key Outcomes
 
-Jenkins pulls the latest source code from the GitHub repository to ensure the pipeline always uses the most recent application changes.
-
-### ✅ Purpose
-- Fetch latest code from SCM
-- Trigger automated CI workflow
-- Maintain version-controlled builds
-
----
-
-## 2️⃣ Maven Unit Testing
-
-Maven executes automated unit tests to validate application functionality before moving further in the pipeline.
-
-### 🛠️ Tools Used
-- Maven
-- JUnit
-
-### ✅ Validations
-- Application logic verification
-- Test case execution
-- Build integrity checks
+- Automated CI/CD workflow using Jenkins
+- Implemented Jenkins Shared Libraries
+- Containerized application using Docker
+- Published images to DockerHub
+- Hosted pipeline infrastructure on AWS EC2
 
 ---
-
-## 3️⃣ Integration Testing
-
-Integration tests validate communication between application modules and dependencies.
-
-### ✅ Purpose
-- Verify module integration
-- Validate application workflow
-- Prevent runtime conflicts
-
----
-
-## 4️⃣ Static Code Analysis - SonarQube
-
-SonarQube performs deep static code analysis to identify quality and security issues.
-
-### 🔍 Validations Performed
-
-- 🐛 Bug Detection
-- 🔒 Vulnerability Analysis
-- 🧄 Code Smell Detection
-- 📈 Maintainability Analysis
-- 🚨 Security Hotspots
-
----
-
-## 5️⃣ Maven Build & Packaging
-
-The Spring Boot application is compiled and packaged into an executable production-ready JAR file.
-
-### ✅ Build Outputs
-- Compiled Java Classes
-- Packaged Spring Boot JAR
-- Production Build Artifact
-
----
-
-## 6️⃣ Docker Image Build
-
-The application is containerized using Docker to provide consistent deployment environments.
-
-### 🚀 Benefits
-- Lightweight Containers
-- Portable Deployments
-- Environment Consistency
-- Faster Application Delivery
-
----
-
-## 7️⃣ Trivy Vulnerability Scanning
-
-Trivy scans the generated Docker image to enforce DevSecOps security best practices.
-
-### 🔐 Scan Coverage
-- Critical Vulnerabilities
-- High Severity CVEs
-- OS Package Vulnerabilities
-- Dependency Vulnerabilities
-- Misconfigurations
-
----
-
-## 8️⃣ DockerHub Push
-
-Validated Docker images are securely pushed to DockerHub for deployment readiness.
-
-### ✅ Features
-- Automated Docker Login
-- Secure Credential Management
-- Image Versioning & Tagging
-
----
-
-## 9️⃣ Docker Cleanup & Reporting
-
-Temporary Docker images and build resources are cleaned from the Jenkins server after successful execution.
-
-### ✅ Cleanup Activities
-- Local Image Cleanup
-- Workspace Optimization
-- Build Reporting
-
----
-
-# 🔧 Jenkins Integrations
-
----
-
-## ✅ SonarQube Integration
-
-Integrated SonarQube with Jenkins for automated code quality analysis and security validation.
-
-### 🔹 Features
-- SonarQube Server Configuration
-- Token-based Authentication
-- Jenkins-SonarQube Integration
-- Automated Static Code Analysis
-- Quality Gate Validation
-
----
-
-## ✅ DockerHub Integration
-
-DockerHub integration was configured for secure image publishing.
-
-### 🔹 Features
-- Secure Docker Credentials
-- Automated Docker Authentication
-- Docker Image Push Automation
-
----
-
-## ✅ Shared Library Integration
-
-Reusable Jenkins pipeline logic implemented using Jenkins Shared Libraries.
-
-### 🔹 Benefits
-- Modular Pipeline Code
-- Reusable Functions
-- Centralized Pipeline Management
-- Cleaner Jenkinsfiles
-
----
-
-# 📊 Project Validation
-
-The following validations were successfully completed during project implementation:
-
-- ✅ Maven Build Success
-- ✅ Unit Test Execution
-- ✅ Integration Test Execution
-- ✅ Docker Image Build
-- ✅ DockerHub Push
-- ✅ Jenkins Pipeline Automation
-- ✅ Shared Library Integration
-- ✅ SonarQube Integration
-- ✅ End-to-End CI/CD Workflow Validation
-
----
-
-# 📷 Project Screenshots
-
-The following screenshots demonstrate the complete implementation of the AWS Jenkins DevSecOps CI/CD Pipeline, including infrastructure setup, pipeline automation, Docker image delivery, and successful execution results.
 
 ## 📂 Repository Structure
 
 ```text
-AWS-Jenkins-DevSecOps-Pipeline/
+AWS-Jenkins-DevSecOps-Pipeline
 │
 ├── README.md
+├── Jenkinsfile
+├── Dockerfile
 │
-└── screenshots/
-    ├── 01_github-repository-overview.jpg
-    ├── 02_jenkinsfile-pipeline-code.jpg
-    ├── 03_aws-ec2-environment.jpg
-    ├── 04_jenkins-stage-view.jpg
-    ├── 05_successful-pipeline-run.jpg
-    ├── 06_console-output-success.jpg
-    └── 07_dockerhub-image-published.jpg
+├── screenshots
+│   ├── 01_github-repository-overview.jpg
+│   ├── 02_jenkinsfile-pipeline-code.jpg
+│   ├── 03_aws-ec2-environment.jpg
+│   ├── 04_jenkins-stage-view.jpg
+│   ├── 05_successful-pipeline-run.jpg
+│   ├── 06_console-output-success.jpg
+│   └── 07_dockerhub-image-published.jpg
+│
+└── Java_app_3.0
 ```
----
-
-## 📁 Source Code Repository
-
-![Source Code Repository](screenshots/01_github-repository-overview.jpg)
-
-**Description:**  
-GitHub repository containing the complete project source code, Jenkins Pipeline as Code (Jenkinsfile), Dockerfile, Maven configuration, Kubernetes manifests, and project documentation.
 
 ---
 
-## ⚙️ Jenkins Pipeline as Code
+## 🚀 Future Enhancements
 
-![Jenkins Pipeline as Code](screenshots/02_jenkinsfile-pipeline-code.jpg)
-
-**Description:**  
-Declarative Jenkins Pipeline implemented using Jenkins Shared Libraries to automate source code checkout, testing, build, containerization, Docker image publishing, and cleanup operations.
-
----
-
-## ☁️ AWS EC2 Build Environment
-
-![AWS EC2 Environment](screenshots/03_aws-ec2-environment.jpg)
-
-**Description:**  
-AWS EC2 Ubuntu server used to host Jenkins, Docker, Maven, Git, SonarQube, and supporting DevOps tooling required for the CI/CD pipeline implementation.
-
----
-
-## 🚀 Jenkins Pipeline Stage View
-
-![Jenkins Stage View](screenshots/04_jenkins-stage-view.jpg)
-
-**Description:**  
-Visual representation of the complete CI/CD workflow showing successful execution of all configured stages including Git Checkout, Unit Testing, Integration Testing, Maven Build, Docker Image Build, DockerHub Push, and Cleanup.
-
----
-
-## ✅ Successful Pipeline Execution
-
-![Successful Pipeline Execution](screenshots/05_successful-pipeline-run.jpg)
-
-**Description:**  
-Jenkins pipeline completed successfully with all stages passing, demonstrating end-to-end automation of the software delivery workflow.
-
----
-
-## 📄 Build Logs & Execution Validation
-
-![Build Logs](screenshots/06_console-output-success.jpg)
-
-**Description:**  
-Jenkins console output validating successful execution of the pipeline, including application build, Docker image creation, image push, and cleanup activities.
-
----
-
-## 🐳 DockerHub Image Published
-
-![DockerHub Image](screenshots/07_dockerhub-image-published.jpg)
-
-**Description:**  
-Successfully built and published Docker image available in DockerHub repository, ready for deployment and consumption across environments.
-
----
-
-## 🏆 Project Outcome
-
-This project successfully demonstrates:
-
-- ✅ CI/CD Pipeline Automation using Jenkins
-- ✅ Jenkins Shared Library Implementation
-- ✅ Maven Build & Test Automation
-- ✅ Docker Image Creation & Management
-- ✅ DockerHub Integration & Image Publishing
-- ✅ AWS EC2 Infrastructure Setup
-- ✅ DevSecOps Workflow Implementation
-- ✅ Infrastructure Troubleshooting & Debugging
-- ✅ End-to-End Pipeline Orchestration
-- ✅ Production-Style DevOps Practices
-
----
-
-# 🎯 Key Learning Outcomes
-
-Through this project, I gained practical hands-on experience in:
-
-- CI/CD Pipeline Design
-- Jenkins Pipeline as Code
-- DevSecOps Best Practices
-- Docker Containerization
 - SonarQube Integration
-- Vulnerability Scanning
-- AWS EC2 Administration
-- Linux Troubleshooting
-- Jenkins Shared Libraries
-- Credential & Secret Management
-- Docker Permission Management
-- Real-world Pipeline Debugging
-
----
-
-# 🚀 Future Enhancements
-
-- Kubernetes Deployment Integration
-- Helm Chart Deployment
+- Trivy Security Scanning
+- Kubernetes Deployment
 - Terraform Infrastructure Automation
-- GitHub Webhook Automation
-- Multi-Environment Pipelines
-- Slack / Email Notifications
-- Artifact Management using JFrog
-- Production-grade Monitoring & Logging
+- GitOps using ArgoCD
+- JFrog Artifactory Integration
+- Prometheus Monitoring
+- Grafana Dashboards
 
 ---
 
-# 🤝 Contributing
+## 🔗 Repositories
 
-Contributions, suggestions, and improvements are welcome.
+### CI/CD Pipeline Repository
 
-## 📌 Steps to Contribute
+https://github.com/pvenki8890/AWS-Jenkins-DevSecOps-Pipeline
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to your branch
-5. Open a Pull Request
+### Application Repository
+
+https://github.com/pvenki8890/Java_app_3.0
 
 ---
 
-# 📄 Conclusion
+## 👨‍💻 Author
 
-This project provided practical real-world exposure to designing, implementing, and troubleshooting a complete DevSecOps CI/CD pipeline using industry-standard tools and AWS infrastructure.
+**Papisetti Venkatesh**
 
-### 🚀 Technologies & Concepts Demonstrated
+DevOps Engineer | Platform Engineer | Site Reliability Engineer (SRE) 
 
-- Continuous Integration
-- Continuous Delivery
-- DevSecOps Automation
-- Security Scanning
-- Docker Containerization
-- Infrastructure Automation
-- Jenkins Pipeline Orchestration
-- Cloud-based CI/CD Workflows
+GitHub: https://github.com/pvenki8890
+
+LinkedIn: https://www.linkedin.com/in/v-0b3699225/
 
 ---
 
+⭐ If you found this project useful, consider giving it a star.
