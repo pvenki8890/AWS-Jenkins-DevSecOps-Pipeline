@@ -103,8 +103,8 @@ AWS-Jenkins-DevSecOps-Pipeline
     ├── 01_github-repository-overview.jpg
     ├── 02_jenkinsfile-pipeline-code.jpg
     ├── 03_aws-ec2-environment.jpg
-    ├── 05_successful-pipeline-run.jpg
-    └── 07_dockerhub-image-published.jpg
+    ├── 04_successful-pipeline-run.jpg
+    └── 05_dockerhub-image-published.jpg
 ```
 
 ---
