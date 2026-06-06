@@ -1,32 +1,34 @@
 # 🚀 AWS Jenkins CI/CD Pipeline
 
-Production-style CI/CD pipeline built using AWS EC2, Jenkins, Maven, Docker, DockerHub, GitHub, and Jenkins Shared Libraries.
+Production-style CI/CD pipeline implemented on AWS EC2 using Jenkins, Maven, Docker, DockerHub, GitHub, and Jenkins Shared Libraries.
+
+This project demonstrates the implementation of a modern Continuous Integration and Continuous Delivery (CI/CD) workflow for a Java Spring Boot application.
 
 ---
 
 ## 📌 Overview
 
-This project demonstrates an automated CI/CD workflow for a Java Spring Boot application.
+The pipeline automates the following stages:
 
-### Implemented Stages
-
-- Git Checkout
-- Maven Unit Testing
+- Source Code Checkout
+- Unit Testing
 - Integration Testing
 - Maven Build & Packaging
 - Docker Image Build
 - DockerHub Push
 - Cleanup & Reporting
 
+The complete solution was implemented and tested on AWS EC2 Ubuntu instances using Jenkins Pipeline as Code and Docker-based containerization.
+
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
 | Category | Technologies |
 |-----------|-------------|
 | Cloud | AWS EC2 |
 | CI/CD | Jenkins, Jenkins Shared Libraries |
-| Build | Maven, JUnit |
+| Build Tools | Maven, JUnit |
 | Containerization | Docker, DockerHub |
 | Source Control | Git, GitHub |
 | Operating System | Ubuntu Linux |
@@ -58,29 +60,35 @@ Jenkins Pipeline
 ## 📷 Screenshots
 
 ### GitHub Repository Overview
+
 ![GitHub Repository](screenshots/01_github-repository-overview.jpg)
 
 ### Jenkins Pipeline Code
+
 ![Jenkinsfile](screenshots/02_jenkinsfile-pipeline-code.jpg)
 
 ### AWS EC2 Environment
-![AWS](screenshots/03_aws-ec2-environment.jpg)
+
+![AWS EC2](screenshots/03_aws-ec2-environment.jpg)
 
 ### Successful Pipeline Execution
+
 ![Pipeline Success](screenshots/05_successful-pipeline-run.jpg)
 
 ### DockerHub Published Image
+
 ![DockerHub](screenshots/07_dockerhub-image-published.jpg)
 
 ---
 
 ## 📊 Key Outcomes
 
-- Automated CI/CD workflow using Jenkins
-- Implemented Jenkins Shared Libraries
+- Implemented Jenkins Pipeline as Code
+- Automated build and testing workflows
 - Containerized application using Docker
-- Published images to DockerHub
-- Hosted pipeline infrastructure on AWS EC2
+- Published Docker images to DockerHub
+- Implemented Jenkins Shared Libraries
+- Demonstrated CI/CD automation on AWS EC2
 
 ---
 
@@ -90,33 +98,17 @@ Jenkins Pipeline
 AWS-Jenkins-DevSecOps-Pipeline
 │
 ├── README.md
-├── Jenkinsfile
-├── Dockerfile
+├── Project Overview.md
 │
-├── screenshots
-│   ├── 01_github-repository-overview.jpg
-│   ├── 02_jenkinsfile-pipeline-code.jpg
-│   ├── 03_aws-ec2-environment.jpg
-│   ├── 04_jenkins-stage-view.jpg
-│   ├── 05_successful-pipeline-run.jpg
-│   ├── 06_console-output-success.jpg
-│   └── 07_dockerhub-image-published.jpg
-│
-└── Java_app_3.0
+└── screenshots/
+    ├── 01_github-repository-overview.jpg
+    ├── 02_jenkinsfile-pipeline-code.jpg
+    ├── 03_aws-ec2-environment.jpg
+    ├── 04_jenkins-stage-view.jpg
+    ├── 05_successful-pipeline-run.jpg
+    ├── 06_console-output-success.jpg
+    └── 07_dockerhub-image-published.jpg
 ```
-
----
-
-## 🚀 Future Enhancements
-
-- SonarQube Integration
-- Trivy Security Scanning
-- Kubernetes Deployment
-- Terraform Infrastructure Automation
-- GitOps using ArgoCD
-- JFrog Artifactory Integration
-- Prometheus Monitoring
-- Grafana Dashboards
 
 ---
 
@@ -132,11 +124,24 @@ https://github.com/pvenki8890/Java_app_3.0
 
 ---
 
+## 🚀 Future Enhancements
+
+- SonarQube Integration
+- Trivy Security Scanning
+- JFrog Artifactory Integration
+- Kubernetes Deployment
+- Terraform Infrastructure Automation
+- GitOps using ArgoCD
+- Prometheus Monitoring
+- Grafana Dashboards
+
+---
+
 ## 👨‍💻 Author
 
 **Papisetti Venkatesh**
 
-DevOps Engineer | Platform Engineer | Site Reliability Engineer (SRE) 
+Platform Engineer | DevOps Engineer | Site Reliability Engineer (SRE)
 
 GitHub: https://github.com/pvenki8890
 
